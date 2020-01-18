@@ -16,7 +16,7 @@ class Calculator(tk.Tk):
 
         self.geometry("400x500")
         
-    def addBox(self,category,weight):
+    def addRow(self,category,weight):
         frame = tk.Frame(self.main_container)
         frame.grid(sticky="new")
         tk.Label(frame, text=category).pack(side="left")
@@ -40,7 +40,7 @@ class Calculator(tk.Tk):
     def lower_bar_init(self):
         frame = tk.Frame(self, height=50)
         frame.pack(side="bottom")
-        addbt = tk.Button(frame, text = "Add row", command = lambda: self.addBox(len(self.grades_n_weights)+1, 0))
+        addbt = tk.Button(frame, text = "Add row", command = lambda: self.addRow(len(self.grades_n_weights)+1, 0))
         addbt.pack(side="left")
         calcbt = tk.Button(frame, text = "Calculate", command = self.calculate_grade)
         calcbt.pack(side="left")
@@ -61,9 +61,9 @@ class Calculator(tk.Tk):
 
 def main():
   app = Calculator()
-  app.addBox("Test","50")
-  app.addBox("HW","30")
-  app.addBox("Lab", "20")
+  app.addRow("Test","50")
+  app.addRow("HW","30")
+  app.addRow("Lab", "20")
   app.mainloop()
 
 if __name__ == "__main__":

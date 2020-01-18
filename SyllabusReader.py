@@ -4,6 +4,7 @@ import camelot
 import nltk
 import pandas
 import pdfminer.high_level
+from bs4 import BeautifulSoup
 import textract
 
 keywords = ["test", "midterm", "homework", "quiz", "project", "lab", 
@@ -31,16 +32,16 @@ def process_chunk2(subtree_leaves):
     grade_category = ""
     for token, pos in subtree_leaves:
         if pos == "CD":
-            return((grade_category, [token]))
+            return((grade_category, [token, token]))
         elif pos != ":":
             grade_category += token + " " 
 
 def process_chunk3or4(subtree_leaves):
     grade_category = subtree_leaves[-2][0] + " " + subtree_leaves[-1][0]
     grade_weight = subtree_leaves[0][0]
-    return((grade_category, [grade_weight]))
+    return((grade_category, [grade_weight, grade_weight]))
 
-dispatcher = {
+process_chunk_dispatcher = {
     "CHUNK1" : process_chunk1,
     "CHUNK2" : process_chunk2,
     "CHUNK3" : process_chunk3or4,
@@ -54,18 +55,21 @@ def extract_grade_pairs(filename):
         text = pdfminer.high_level.extract_text(filename)
     else:
         text = textract.process(filename).decode('utf-8')
-    text = re.sub(r'\([^)]*\)', '', text) #will replace parenthesis in txt with nothing
-
+    pattern = re.compile(r'(?<=\().*?(?=\))') #Parenthesis phases without parenthesis using lookaheads/lookbehinds
+    #pattern = re.compile(r'\([^)]*\)') #Parenthesis phases including parenthesis
+    parenthesis_phases = pattern.findall(text)
+    parenthesis_phases = ". ".join(parenthesis_phases)
+    text = pattern.sub('', text) + ". ".join(parenthesis_phases)
     pre_processed = [sentence + '.' for sentence in text.split('.') if '%' in sentence]
-    #tokens = [sentence for sentence in tokens if any(k in sentence for k in keywords)]
+
     txt = nltk.word_tokenize("".join(pre_processed))
     tagged = nltk.pos_tag(txt)
     chunked = chunker.parse(tagged)
 
-    res = []
-    for subtree in chunked.subtrees(filter=lambda t: t.label() in dispatcher):
-        res.append(dispatcher[subtree.label()](subtree))
-    return(res)
+    grade_pairs = []
+    for subtree in chunked.subtrees(filter=lambda t: t.label() in process_chunk_dispatcher):
+        grade_pairs.append(process_chunk_dispatcher[subtree.label()](subtree))
+    return(grade_pairs)
 
 def extract_table_from_pdf(filename):
     #Returns the first grading table
@@ -85,41 +89,21 @@ def process_table(df):
         for i, key in enumerate(keys):
             res.append((key, re.findall(r'\d+', vals[i])))
     return res
+ 
 
-class NotEnoughGrades(Exception):
-    pass
-
-def grade_calc(lst):
-    res = []
-    for grade_pair in lst:
-        try:
-            if len(grade_pair[1]) == 1:
-                print("Please enter your overall grade for " + grade_pair[0])
-                grade = float(input())
-                weight = float(grade_pair[1][0]) / 100
-                res.append(grade*weight)
-            else:
-                num_of_grades =  float(grade_pair[1][0]) // float(grade_pair[1][1])
-                print("Please enter each of your " + str(num_of_grades) + " grades for " + grade_pair[0] + ", seperated by commas")
-                input_list = input()
-                input_list = input_list.split(',')
-                grades = [float(num) for num in input_list]
-                if len(grades) != num_of_grades:
-                    raise NotEnoughGrades
-                weight = float(grade_pair[1][0]) / 100
-                grade = sum(grades) * weight / num_of_grades
-                res.append(grade)
-        except ValueError:
-            print("A number(s) was not detected. Exiting.")
-            return
-        except NotEnoughGrades:
-            print("Not enough grades were entered. Exiting.")
-            return
-
-    print("Your final grade is " + str(sum(res)) + "%.")
-
-# process_table(extract_table_from_pdf("4242syllabus.pdf"))
-#grade_calc([('HW/Quizzes', ['15']), ('Midterms', ['50', '25']), ('Final exam', ['35'])])
-#"1302syllabus.pdf", "2041syllabus.html", "4242syllabus.pdf"
 if __name__ == "__main__":
-    print(extract_grade_pairs("4242syllabus.pdf"))
+    #print(extract_grade_pairs("4242syllabus.pdf"))
+    #process_table(extract_table_from_pdf("4242syllabus.pdf")) -> [('HW/Quizzes', ['15']), ('Midterms', ['50', '25']), ('Final exam', ['35'])]
+    html = """<table border="1"><tbody><tr><td></td></tr>
+<tr><td>Item </td><td align="right">Fraction of Grade </td></tr>
+<tr><td></td></tr>
+<tr><td>Lab attendance (12/15)</td><td align="right">5%</td></tr>
+<tr><td>Written exercises</td><td align="right">15%</td></tr>
+<tr><td>Hands-on assignments</td><td align="right">20%</td></tr>
+<tr><td>Midterm 1</td><td align="right">15%</td></tr>
+<tr><td>Midterm 2</td><td align="right">15%</td></tr>
+<tr><td>Final Exam</td><td align="right">30%</td></tr>
+<tr><td></td></tr></tbody></table>"""
+
+    soup = BeautifulSoup(html)
+    table = soup.find("table")
