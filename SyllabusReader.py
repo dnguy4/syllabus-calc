@@ -8,7 +8,7 @@ import textract
 grammar = ("""CHUNK1: {<CD>*(<JJ>|<NN>+|<NNP>+)+<:>?<CD><NN><DT>}
               CHUNK2: {(<JJ>|<NN>+|<NNP>+)+<:>?<CD><NN>}
               CHUNK3: {<CD><NN><IN>?<DT><JJ>*<NN>?(<NNP>|<NNS>)?}
-              CHUNK4: {<CD><NN><IN><.>{0,8}(<NN>|<NNP>)+}
+              CHUNK4: {<CD><NN><IN><.*>{0,8}(<NN>|<NNP>)+}
               """)
 """Some common grammatical patterns for explaining grade percentages.
     CHUNK1: Covers "4 Midterms: 10% each" phrasing
@@ -79,5 +79,4 @@ def extract_grade_pairs(filename):
 
  
 if __name__ == "__main__":
-    #print(extract_grade_pairs("4242syllabus.pdf"))
-    print(extract_grade_pairs("1051syllabus.docx"))
+    print(extract_grade_pairs("Samples//2041syllabus.html"))

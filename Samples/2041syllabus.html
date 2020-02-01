@@ -1,0 +1,1850 @@
+<!-- Created by Bracy 0.4 on Friday, September 6, 2019 at 6:30 PM CDT -->
+<html>
+ <head>
+  <title>
+   CSci 2041: Advanced Programming
+  </title>
+  <style>
+   a:active
+    { color: purple;
+      font-weight: bold;
+      text-decoration: none }
+   a:link
+    { color: blue;
+      font-weight: bold;
+      text-decoration: none }
+   a:visited
+    { color: purple;
+      font-weight: bold;
+      text-decoration: none }
+   hr
+    { background-color: black; 
+      border: none;
+      color: black;
+      height: 1px }
+   table
+    { border-collapse: collapse }
+  </style>
+ </head>
+ <body bgcolor="#FFFFFF">
+  <p align="center">
+   <b>CS<small>CI</small> 2041: Advanced Programming</b>
+   <br />
+   <br />
+   <b>University of Minnesota</b>
+   <br />
+   <b>Department of Computer Science and Engineering</b>
+   <br />
+   <b>Fall 2019</b>
+   <br />
+   <br />
+   <i>Last revision September 6, 2019</i>
+  </p>
+  <p align="justify">
+   Principles and techniques for creating correct, robust, and modular
+   programs. Computing with symbolic data, recursion and induction, functional
+   programming, impact of evaluation strategies, parallelism. Organizing data
+   and computations around types. Search-based programming, concurrency,
+   modularity. Practical applications. Weekly labs. Prerequisites:
+   CS<small>CI</small> 1913 or CS<small>CI</small> 1933;
+   CS<small>CI</small> 2011.
+  </p>
+  <blockquote>
+   <table cellpadding="0" cellspacing="0">
+    <tr valign="top">
+     <td>
+      <p>
+       Lecture:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       1
+       <a href="https://campusmaps.umn.edu/robert-h-bruininks-hall">
+        Bruininks Hall
+       </a>
+       230
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       9:05 <small>AM</small>&#8211;9:55 <small>AM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Monday, Wednesday, Friday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       Labs:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       2
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       8:00 <small>AM</small>&#8211;8:50 <small>AM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       3
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       9:05 <small>AM</small>&#8211;9:55 <small>AM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       4
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       10:10 <small>AM</small>&#8211;11:00 <small>AM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       5
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       11:15 <small>AM</small>&#8211;12:05 <small>PM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       6
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       12:20 <small>PM</small>&#8211;1:10 <small>PM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       7
+       <a href="http://www.campusmaps.umn.edu/kenneth-h-keller-hall">
+        Keller Hall
+       </a>
+       1&#8211;250
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       1:25 <small>PM</small>&#8211;2:15 <small>PM</small>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Tuesday
+      </p>
+     </td>
+    </tr>
+   </table>
+  </blockquote>
+  <p align="justify">
+   CS<small>CI</small> 2041 is a required course for computer science
+   majors, usually taken at the end of the sophomore year or the beginning of
+   the junior year.
+  </p>
+  <p>
+   <b>Instructor.</b>
+  </p>
+  <p align="justify">
+   I&rsquo;m James B. Moen. Since this course has a large enrollment, teaching
+   responsibilities are divided between myself, the graduate TA&rsquo;s, and
+   the undergraduate TA&rsquo;s. I teach the lecture section of the course; I
+   write lab assignments, projects, and tests; I answer students&rsquo;
+   questions during my office hours and by email.
+  </p>
+  <blockquote>
+   <table cellpadding="0" cellspacing="0">
+    <tr valign="top">
+     <td>
+      <p>
+       Name:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       James B. Moen
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       Email:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       <tt>moen0017@umn.edu</tt>&nbsp;
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       Office:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       <a href="http://campusmaps.umn.edu/shepherd-laboratories">
+        Shepherd Laboratories
+       </a>
+       325
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       Office Hours:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       1:00 <small>PM</small>&#8211;2:00 <small>PM</small> Monday,
+       Wednesday, Friday (or by appointment)
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       Office Phone:
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       (612) 625&#8211;7909
+      </p>
+     </td>
+    </tr>
+   </table>
+  </blockquote>
+  <p align="justify">
+   I may be in my office at other times, not just during my scheduled office
+   hours. You may visit my office (almost) any time I am there. You may also
+   telephone or send email at any time. However, if you telephone and I am not
+   in the office, then please leave me a message by email, not voice mail. I
+   have many email addresses: if possible, please send email about
+   CS<small>CI</small> 2041 to me at the address shown above.
+  </p>
+  <p>
+   <b>Teaching assistants.</b>
+  </p>
+  <p align="justify">
+   Yifan Hu, Anubhav Panda, Eduardo Yap, and Luyao Zhong are the graduate
+   TA&rsquo;s for the course. The graduate TA&rsquo;s grade lab assignments,
+   projects, and tests; they answer students&rsquo; questions during their
+   office hours, and by email. Amith Bhat, Esmeralda Bolanos, Hannah DuBois,
+   Kalen Iommazzo, Lokesh Nasaka, April Roszkowski, Denis Rybkin, and Owen
+   Young are the undergraduate TA&rsquo;s. The undergraduate TA&rsquo;s run the
+   labs; they grade lab assignments, projects, and tests; they answer
+   students&rsquo; questions during their office hours, and by email.
+  </p>
+  <table align="center" border="1" cellpadding="3" cellspacing="0">
+   <tr bgcolor="#D3D3D3" valign="top">
+    <td>
+     <p align="center">
+      <b>&nbsp;<small>NAME</small>&nbsp;</b>
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      <b>&nbsp;<small>EMAIL</small>&nbsp;</b>
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      <b>&nbsp;<small>OFFICE</small>&nbsp;</b>
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      <b>&nbsp;<small>OFFICE HOURS</small>&nbsp;</b>
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      <b>&nbsp;<small>LABS</small>&nbsp;</b>
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Yifan Hu (<small>GRAD</small>)&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>huxxx988@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Anubhav Panda (<small>GRAD</small>)&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>panda047@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Eduardo Yap (<small>GRAD</small>)&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>yap00014@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Luyao Zhang (<small>GRAD</small>)&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>zhan5380@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Yi Zhong (<small>GRAD</small>)&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>zhong305@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Amith Bhat&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>bhatx040@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+      <a href="https://campusmaps.umn.edu/kenneth-h-keller-hall">
+       Keller Hall
+      </a>
+      Atrium Table&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;12:10 <small>PM</small>&#8211;2:10 <small>PM</small>
+      Thursday&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;6, 7&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Esmeralda Bolanos&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>bolan094@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+      <a href="https://campusmaps.umn.edu/kenneth-h-keller-hall">
+       Keller Hall
+      </a>
+      4&#8211;240&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;12:00 <small>PM</small>&#8211;2:00 <small>PM</small>
+      Friday&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;4, 5&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Hannah DuBois&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>duboi131@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;2, 3&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Kalen Iommazzo&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>iomma001@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;6, 7&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Lokesh Nasaka&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>nasak001@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<small>TBA</small>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;2, 5&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;April Roszkowski&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>roszk008@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+      <a href="http://campusmaps.umn.edu/shepherd-laboratories">
+       Shepherd Laboratories
+      </a>
+      304&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;8:00 <small>AM</small>&#8211;9:40 <small>AM</small>
+      Monday&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;2, 6&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Denis Rybkin&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>rybki001@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+      <a href="https://campusmaps.umn.edu/kenneth-h-keller-hall">
+       Keller Hall
+      </a>
+      4&#8211;240&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;10:00 <small>AM</small>&#8211;12:00 <small>PM</small>
+      Monday&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;3, 4, 7&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Owen Young&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<tt>youn1995@umn.edu</tt>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+      <a href="https://campusmaps.umn.edu/kenneth-h-keller-hall">
+       Keller Hall
+      </a>
+      1&#8211;260&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;12:30 <small>PM</small>&#8211;2:30 <small>PM</small>
+      Friday&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;3, 4, 5&nbsp;
+     </p>
+    </td>
+   </tr>
+  </table>
+  <p align="justify">
+   Note that <i>the TA&rsquo;s do all the grading for this course!</i> If
+   you have questions about your grades, on a lab assignment, a project, or a
+   test, then <i>please contact one of the TA&rsquo;s first.</i> If you
+   contact me first, then I will refer you to the TA&rsquo;s.
+  </p>
+  <p>
+   <b>Textbooks.</b>
+  </p>
+  <p align="justify">
+   There are no required textbooks for this course: everything you need to know
+   will be discussed in the lectures. Why are there no textbooks? (1) We will
+   be using the programming language OCaml. Since OCaml is relatively new,
+   there are few good textbooks written for it. (2) Many topics to be discussed
+   are not traditionally part of the undergraduate computer science curriculum.
+   Although there is published work about these topics, much of it is not
+   discussed in textbooks.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You may find the
+   <a href="https://ocaml.org">
+    Ocaml web site
+   </a>
+   to be a useful source of information. Among other things, it contains the
+   <a href="https://caml.inria.fr/pub/docs/manual-ocaml-4.08/">
+    Ocaml Documentation and User&rsquo;s Manual.
+   </a>
+   There is also much additional information about OCaml available online,
+   although it varies in quality.
+  </p>
+  <p>
+   <b>Grading.</b>
+  </p>
+  <p align="justify">
+   This course will include thirteen weekly laboratory assignments, three
+   programming projects, two midterm examinations, and a final examination.
+   Your final grade will be determined by the total number of points you
+   receive on each. 10% of your grade will be based on the lab assignments, 30%
+   on the programming projects, 30% on the midterm examinations, and 30% on the
+   final examination. Here is how your final grade will be computed. Let
+   <i>l</i>, <i>L</i>, <i>p</i>, <i>P</i>, <i>m</i>,
+   <i>M</i>, <i>f</i>, and <i>F</i> be defined like this:
+  </p>
+  <blockquote>
+   <table cellpadding="0" cellspacing="0">
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>l</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points you received on all labs
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>L</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points possible on all labs
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>p</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points you received on all projects
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>P</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points possible on all projects
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>m</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points you received on both midterm examinations
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>M</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points possible on both midterm examinations
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>f</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points you received on the final examination
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       <i>F</i>
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;=&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       Points possible on the final examination
+      </p>
+     </td>
+    </tr>
+   </table>
+  </blockquote>
+  <p align="justify">
+   A real number <i>G</i> will be calculated according to the following
+   formula, where 0&nbsp;&#8804;&nbsp;<i>G</i>&nbsp;&#8804;&nbsp;1.
+  </p>
+  <blockquote>
+   <table cellpadding="0" cellspacing="0">
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>l</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>p</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>m</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>f</i>&nbsp;
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       <i>G</i>&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0.1&nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <hr />
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;0.3&nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <hr />
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;0.3&nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <hr />
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;0.3&nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <hr />
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p>
+       &nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>L</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>P</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>M</i>&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       &nbsp;<i>F</i>&nbsp;
+      </p>
+     </td>
+    </tr>
+   </table>
+  </blockquote>
+  <p align="justify">
+   <i>G</i> will then be converted to an integer percent, rounding in the
+   usual way. (For example, 94.02% rounds to 94% because its fractional part is
+   &lt;&nbsp;0.5, but 94.61% rounds to 95% because its fractional part is
+   &#8805;&nbsp;0.5.) This table shows what your final grade will be, depending
+   on the rounded percent. For S/N grading, an S requires that you have at
+   least 60%. The performance of other students will not affect your grade.
+  </p>
+  <blockquote>
+   <table align="center" border="1" cellpadding="3" cellspacing="0">
+    <tr bgcolor="#D3D3D3" valign="top">
+     <td>
+      <p align="center">
+       <b>&nbsp;<small>PERCENT</small> <i>G</i>&nbsp;</b>
+      </p>
+     </td>
+     <td>
+      <p align="center">
+       <b>&nbsp;<small>GRADE</small>&nbsp;</b>
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;95% &#8804; <i>p</i> &#8804; 100%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;A
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;90% &#8804; <i>p</i> &#8804; 94%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;A&#8722;
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;85% &#8804; <i>p</i> &#8804; 89%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;B+
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;80% &#8804; <i>p</i> &#8804; 84%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;B
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;75% &#8804; <i>p</i> &#8804; 79%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;B&#8722;
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;70% &#8804; <i>p</i> &#8804; 74%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;C+
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;65% &#8804; <i>p</i> &#8804; 69%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;C
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;60% &#8804; <i>p</i> &#8804; 64%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;C&#8722;
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;55% &#8804; <i>p</i> &#8804; 59%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;D+
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp;50% &#8804; <i>p</i> &#8804; 54%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;D
+      </p>
+     </td>
+    </tr>
+    <tr valign="top">
+     <td>
+      <p align="center">
+       &nbsp;&nbsp; 0% &#8804; <i>p</i> &#8804; 49%&nbsp;&nbsp;
+      </p>
+     </td>
+     <td>
+      <p>
+       &nbsp;&nbsp;&nbsp;&nbsp;F
+      </p>
+     </td>
+    </tr>
+   </table>
+  </blockquote>
+  <p align="justify">
+   If you believe that a laboratory assignment, a programming project, or an
+   examination has been graded incorrectly, then you must contact the
+   TA&rsquo;s within <i>ten working days</i> after the grade is posted on
+   Canvas. If you believe that your course grade is incorrect, then you must
+   contact me within <i>ten working days</i> after the grade appears on
+   the University&rsquo;s web site. If you do not contact us within ten working
+   days, then your grade will not be changed.
+  </p>
+  <p>
+   <b>Laboratories.</b>
+  </p>
+  <p align="justify">
+   Most weeks, there will be a one-hour computing lab. You will work with a
+   partner during each lab, and both partners will receive the same number of
+   points for their work. With the lab instructor&rsquo;s permission, you may
+   work alone instead, but I recommend that you work with a partner. You need
+   not work with the same partner every time. Although you may discuss the labs
+   with others in a general way, you are not allowed to work on a lab with
+   anyone other than your partner.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lab assignments must be submitted through the
+   course Canvas site. All submissions are final: after the lab is due, you
+   cannot turn it in again, for any reason. Late labs may be turned in up to 24
+   hours late, but with a 10% penalty. If your lab is more than 24 hours late,
+   then it will not be accepted. If you must turn in a lab assignment late
+   without penalty (perhaps because of illness), then ask your lab TA for
+   permission as soon as possible. If you wait until the end of the semester to
+   turn in missed labs, then they will not be accepted.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Here is how to make up a missed computing
+   lab. (1) Get the lab assignment from Canvas. (2) Do the lab assignment on
+   your own. (3) Submit the lab assignment before it is due.
+  </p>
+  <p>
+   <b>Projects.</b>
+  </p>
+  <p align="justify">
+   There will be three programming projects, all in OCaml. Projects must be
+   done individually, although you may discuss them with others in a general
+   way.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Projects must be submitted through the course
+   Canvas site. All submissions are final: after the project is due, you cannot
+   turn it in again, for any reason. Late projects may be turned in up to 24
+   hours late, but with a 10% penalty. If your project is more than 24 hours
+   late, then it will not be accepted. If you must turn in a project late
+   without penalty (perhaps because of illness), then ask your lab TA for
+   permission as soon as possible. If you wait until the end of the semester to
+   turn in missed projects, then they will not be accepted.
+  </p>
+  <p>
+   <b>Examinations.</b>
+  </p>
+  <p align="justify">
+   There will be two midterm examinations and a final examination. All three
+   must be done individually. They will be &lsquo;&lsquo;open
+   notes,&rsquo;&rsquo; so you will be allowed to use anything represented on
+   paper to help you answer questions, including class notes, lab assignments,
+   program listings, and Xeroxed pages (this may not be a complete list).
+   However, you will <i>not</i> be allowed to use published books. You
+   will also <i>not</i> be allowed to use electronic devices, including
+   calculators, cell phones, computers, ebook readers, smart watches, and
+   tablets (this may not be a complete list). If you have questions about what
+   is (or is not) allowed, then please ask me.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you know that you will miss an
+   examination, then you must contact me well before that examination to
+   schedule an alternate date. If you miss an examination without contacting me
+   in this way, then you must submit a written statement that adequately
+   explains your absence before I will schedule an alternate date. Explanations
+   like &lsquo;&lsquo;I forgot there was a test&rsquo;&rsquo; or
+   &lsquo;&lsquo;I overslept&rsquo;&rsquo; or &lsquo;&lsquo;my car
+   wouldn&rsquo;t start&rsquo;&rsquo; will not be accepted. Examinations on
+   alternate dates may be different from those on scheduled dates: they may be
+   easier, harder, or the same difficulty.
+  </p>
+  <p>
+   <b>Incompletes.</b>
+  </p>
+  <p align="justify">
+   Incompletes will be granted only in rare instances, in which (1) you have
+   completed all the coursework to date, and (2) an unforeseeable event
+   prevents you from completing a small part of the remaining coursework.
+   Incompletes will <i>not</i> be granted for foreseeable events, such as
+   a heavy course load, or poor performance. You must request an incomplete as
+   soon as possible, and you must provide a written statement that adequately
+   explains why it is necessary.
+  </p>
+  <p>
+   <b>Conduct.</b>
+  </p>
+  <p align="justify">
+   Cheating on any part of this course is a serious offense. The consequences
+   of cheating may include a score of zero points on any work in which cheating
+   occurred, or a failing grade in the course. You may also be reported to the
+   Office for Student Conduct and Academic Integrity. More information is
+   available at the CS<small>CI</small>
+   <a href="http://www-users.cs.umn.edu/~barry/intro/acad-conduct.html">
+    Academic Conduct Page.
+   </a>
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Examples of cheating include (1) copying work
+   from other students, (2) letting other students copy your work, (3) getting
+   help from websites, (4) getting help from people other than me or the course
+   TA&rsquo;s, and (5) using posted or common solutions (this may not be a
+   complete list). If you have questions about what is (or is not) allowed,
+   then please ask me.
+  </p>
+  <p>
+   <b>Disabilities.</b>
+  </p>
+  <p align="justify">
+   The University of Minnesota is committed to providing equitable access to
+   learning opportunities for all students. The Disability Resource Center
+   (DRC) collaborates with students with disabilities to provide for and
+   arrange reasonable accommodations.
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you have, or think you may have, a
+   disability (such as attentional, chronic health, learning, mental health,
+   physical, or sensory), then please contact DRC at 612&nbsp;626&#8211;1333 to
+   arrange a confidential discussion regarding equitable access and reasonable
+   accommodations. More information is available at the
+   <a href="https://disability.umn.edu">
+    DRC web site.
+   </a>
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you are registered with DRC and have a
+   current letter requesting accommodations, then you may optionally contact me
+   early in the semester to review how the accommodations will be applied in
+   the course. My general policy is that you will receive whatever
+   accommodations your letter asks for.
+  </p>
+  <p>
+   <b>Schedule.</b>
+  </p>
+  <p align="justify">
+   Topics discussed on each date are <i>very</i> approximate. I may change
+   them during the course. Programming projects do not appear on the schedule,
+   but will be announced in class. <i>There are no labs scheduled during the
+   first week of class!</i>
+  </p>
+  <table align="center" border="1" cellpadding="3" cellspacing="0">
+   <tr bgcolor="#D3D3D3" valign="top">
+    <td>
+     <p align="center">
+      &nbsp;<b><small>LECTURE DATES</small></b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      &nbsp;<b><small>LECTURE TOPICS</small></b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p align="center">
+      &nbsp;<b><small>LAB DATES</small></b>&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 2&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<b>U<small>NIVERSITY CLOSED</small>.</b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 3&#8211;6&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Introduction. Functional programming. OCaml.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 9&#8211;13&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Simple expressions.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Sep 10&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 16&#8211;20&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Variables and functions.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Sep 17&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 23&#8211;27&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Pattern matching.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Sep 24
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Sep 30&#8211;Oct 4&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Tuples, lists, polymorphism.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Oct 1&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Oct 7&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<b>F<small>IRST MIDTERM EXAMINATION</small>.</b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Oct 9&#8211;11&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Unions.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Oct 8&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Oct 14&#8211;18&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;References, side effects.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Oct 15&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Oct 21&#8211;25&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Records, arrays, strings.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Oct 22&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Oct 28&#8211;Nov 1&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Exceptions.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Oct 29&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 4&#8211;8&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Input and output.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Nov 5&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 11&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<b>S<small>ECOND MIDTERM EXAMINATION</small>.</b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 13&#8211;15&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Files, compilation units, programs.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Nov 12&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 18&#8211;22&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Modules.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Nov 19&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 25&#8211;27&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Functors.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Nov 26&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Nov 28&#8211;29&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<b>U<small>NIVERSITY CLOSED</small>.</b>&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Dec 2&#8211;Dec 6&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Objects.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Dec 3&nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Dec 9&#8211;Dec 11&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;Classes.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+   <tr valign="top">
+    <td>
+     <p>
+      &nbsp;Dec ??&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;<b>F<small>INAL EXAMINATION</small></b>.&nbsp;
+     </p>
+    </td>
+    <td>
+     <p>
+      &nbsp;
+     </p>
+    </td>
+   </tr>
+  </table>
+  <p align="justify">
+   The final examination will be held in the usual
+   <a href="https://campusmaps.umn.edu/robert-h-bruininks-hall">
+    Bruininks Hall
+   </a>
+   230 classroom.
+  </p>
+ </body>
+</html>

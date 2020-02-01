@@ -3,13 +3,16 @@ import camelot
 from bs4 import BeautifulSoup
 import pandas
 
+class NoTablesFound(Exception):
+    pass
+
 def extract_table_from_pdf(filename):
     """Returns the first potential grading table."""
     tables = camelot.read_pdf(filename, pages='all', line_scale = 20)
     for table in tables:
         if '%' in table.df.to_string():
             return table.df
-    return None
+    raise NoTablesFound
 
 def extract_table_from_html(filename):
     """Returns the first potential grading table."""
@@ -17,7 +20,7 @@ def extract_table_from_html(filename):
     for df in dfs:
         if '%' in df.to_string():
             return df
-    return None
+    raise NoTablesFound
 
 def process_table(df):
     """Return grade pairs from a dataframe."""
@@ -37,17 +40,18 @@ def process_table(df):
 
 def extract_grade_pairs(filename):
     """Return grade pairs from table inside a file."""
-    if filename.endswith(".pdf"):
-        df = extract_table_from_pdf(filename)
-    elif filename.endswith(".html"):
-        df = extract_table_from_html(filename)
-    else:
-        df = None
-    if df == None: # Error check if no relevant table found
-        return None
-    return process_table(df) 
+    try:
+        if filename.endswith(".pdf"):
+            df = extract_table_from_pdf(filename)
+        elif filename.endswith(".html"):
+            df = extract_table_from_html(filename)
+        else:
+            raise NoTablesFound
+        return process_table(df)
+    except NoTablesFound:
+        print("No tables were found in %s." %filename)
+        return []
 
 if __name__ == "__main__":
-    df = extract_table_from_html("2021syllabus.html")
+    df = extract_table_from_html("Samples//2021syllabus.html")
     print(process_table(df))
-    

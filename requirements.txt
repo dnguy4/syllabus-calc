@@ -1,0 +1,7 @@
+pdfminer.six==20200104
+nltk==3.4.5
+textract==1.6.3
+camelot_py==0.7.3
+pandas==0.25.3
+beautifulsoup4==4.8.2
+camelot==13.04.13-gpl-pyqt

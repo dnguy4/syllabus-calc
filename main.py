@@ -1,6 +1,10 @@
 import CalculatorGUI
 import SyllabusReader
 import TableExtractor
+import os
+import tkinter as tk
+from tkinter import filedialog
+from pathlib import Path
 
 def process_grade_pair(grade_pairs):
     """Create a calculator instance for grading categories."""
@@ -32,5 +36,18 @@ def create_grade_calulator(filename, tables=False):
     process_grade_pair(grade_pairs)
 
 if __name__ == "__main__":
-    #"1302syllabus.pdf", "2041syllabus.html", "4242syllabus.pdf"
-    create_grade_calulator("1051syllabus.docx")
+    root = tk.Tk()
+    root.withdraw()
+    folder = filedialog.askdirectory()
+    path = Path(folder)
+    root.destroy()
+    if path.is_dir():
+        gen = (filepath for filepath in path.glob('*') if filepath.is_file())
+        for filepath in gen:
+            fp = str(filepath)
+            fn = os.path.basename(fp)
+            tables = input("Does %s contain a table? Answer yes (y) or no (n). " %fn)
+            if tables.lower() == "yes" or tables.lower() == "y":
+                create_grade_calulator(fp, True)
+            else:
+                create_grade_calulator(fp)
