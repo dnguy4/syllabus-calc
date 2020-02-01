@@ -45,6 +45,10 @@ if __name__ == "__main__":
         gen = (filepath for filepath in path.glob('*') if filepath.is_file())
         for filepath in gen:
             fp = str(filepath)
+            extension = os.path.splitext(fp)[-1].lower()
+            if extension in ('.png', '.jpg', '.jpeg', '.gif'): # Ignore images
+                break
+            
             fn = os.path.basename(fp)
             tables = input("Does %s contain a table? Answer yes (y) or no (n). " %fn)
             if tables.lower() == "yes" or tables.lower() == "y":
